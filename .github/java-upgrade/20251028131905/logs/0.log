@@ -1,0 +1,41 @@
+2025-10-28T13:19:05.500Z [INFO] ----------------------invoke generate_upgrade_plan_for_java_project----------------------
+2025-10-28T13:19:05.506Z [INFO] [Tool.invoke]({name: generate_upgrade_plan_for_java_project, input: {
+  "projectPath": "c:\\Users\\jawaa_p0aeelf\\OneDrive\\Desktop\\VideoGameTracker",
+  "targetJavaVersion": "21"
+}}).
+2025-10-28T13:19:05.512Z [INFO] [Plan.tryStartTask]({tool:generate_upgrade_plan_for_java_project, nextTask:{type:undefined, tool:undefined}}
+2025-10-28T13:19:05.513Z [INFO] [Plan.tryStartTask]: no next task, create new one.
+2025-10-28T13:19:05.520Z [INFO] [Plan.createTaskAtStart]({tool: generate_upgrade_plan_for_java_project, input: {
+  "projectPath": "c:\\Users\\jawaa_p0aeelf\\OneDrive\\Desktop\\VideoGameTracker",
+  "targetJavaVersion": "21",
+  "sessionId": "20251028131905"
+}}).
+2025-10-28T13:19:05.527Z [INFO] [Plan.tryStartTask]: starting task generatePlan
+2025-10-28T13:19:05.529Z [INFO] [Task.start](): Starting task generatePlan
+2025-10-28T13:19:05.544Z [INFO] [Task.start](1): Started task generatePlan
+2025-10-28T13:19:06.460Z [INFO] [Tool.invoke] validate GitHub Copilot license.
+2025-10-28T13:19:51.148Z [INFO] Copilot user info:{
+  "access_type_sku": "free_limited_copilot",
+  "analytics_tracking_id": "9ea84d86d9e0055b84f7a8fb0128d20f",
+  "assigned_date": "2025-05-16T23:19:24+05:30",
+  "can_signup_for_limited": false,
+  "chat_enabled": true,
+  "copilot_plan": "individual",
+  "organization_login_list": [],
+  "organization_list": [],
+  "limited_user_quotas": {
+    "chat": 410,
+    "completions": 3265
+  },
+  "limited_user_subscribed_day": 16,
+  "limited_user_reset_date": "2025-11-16",
+  "monthly_quotas": {
+    "chat": 500,
+    "completions": 4000
+  }
+}
+2025-10-28T13:19:51.152Z [WARN] "GitHub Copilot app modernization - upgrade for Java" and its tools are only available for GitHub Copilot "Pro", "Pro+", "Business" and "Enterprise" plans.
+2025-10-28T13:19:51.163Z [ERROR] [Tool.invoke] error occurs when invoking tool generate_upgrade_plan_for_java_project: UnsupportedCopilotPlanError: "GitHub Copilot app modernization - upgrade for Java" and its tools are only available for GitHub Copilot "Pro", "Pro+", "Business" and "Enterprise" plans.. Please upgrade your GitHub Copilot plan to use this feature or upgrading this project using other tools you prefer..
+2025-10-28T13:19:51.171Z [INFO] [Task.complete](1): Completing task generatePlan
+2025-10-28T13:19:51.183Z [INFO] ----------------------invoked generate_upgrade_plan_for_java_project----------------------
+2025-10-28T13:19:51.194Z [INFO] [Task.complete](1): Completed task generatePlan

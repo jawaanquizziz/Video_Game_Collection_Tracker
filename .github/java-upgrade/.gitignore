@@ -1,0 +1,10 @@
+# Ignore compiled Java output
+/target/
+
+# Ignore IDE files
+.idea/
+*.iml
+.vscode/
+
+# Ignore the database credentials file
+/src/main/java/com/gametracker/db/DatabaseUtil.java
