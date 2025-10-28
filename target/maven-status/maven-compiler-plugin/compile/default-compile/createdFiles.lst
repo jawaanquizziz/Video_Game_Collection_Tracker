@@ -1,0 +1,9 @@
+com\gametracker\db\DatabaseUtil.class
+com\gametracker\MainApp.class
+com\gametracker\model\CollectionItem.class
+com\gametracker\model\Game.class
+com\gametracker\controller\MainViewController.class
+com\gametracker\model\User.class
+com\gametracker\db\UserDAO.class
+com\gametracker\controller\LoginViewController.class
+com\gametracker\model\Platform.class

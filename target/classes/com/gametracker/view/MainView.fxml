@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- 
+  This is the main view of the application.
+  It uses an AnchorPane to fill the window and a VBox to stack the header and TabPane.
+-->
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gametracker.controller.MainViewController">
+   <children>
+      <VBox styleClass="main-vbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- 
+              THIS IS THE NEW HEADER
+              It contains the welcomeLabel and logoutButton.
+              The fx:id="welcomeLabel" here is what fixes your error.
+            -->
+            <HBox styleClass="header" alignment="CENTER_LEFT" spacing="10">
+               <children>
+                  <Label fx:id="welcomeLabel" styleClass="welcome-label" text="Welcome, User!" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutButton" styleClass="logout-button" text="Logout" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </HBox>
+            
+            <!-- This is the main TabPane for the application -->
+            <TabPane styleClass="tab-pane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+              <tabs>
+                
+                <!-- Collection Tab -->
+                <Tab fx:id="collectionTab" text="My Collection">
+                  <content>
+                    <VBox styleClass="tab-content-vbox" spacing="10">
+                       <children>
+                          <Label styleClass="tab-header" text="My Video Game Collection" />
+                          <TableView fx:id="collectionTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                              <TableColumn fx:id="gameTitleColumn" prefWidth="200.0" text="Game Title" />
+                              <TableColumn fx:id="platformColumn" prefWidth="150.0" text="Platform" />
+                              <TableColumn fx:id="statusColumn" prefWidth="120.0" text="Status" />
+                              <TableColumn fx:id="purchaseDateColumn" prefWidth="150.0" text="Purchase Date" />
+                              <TableColumn fx:id="priceColumn" prefWidth="100.0" text="Price Paid" />
+                              <TableColumn fx:id="notesColumn" prefWidth="300.0" text="Notes" />
+                            </columns>
+                             <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                             </columnResizePolicy>
+                          </TableView>
+                          <HBox styleClass="button-bar" spacing="10">
+                             <children>
+                                <Button fx:id="addCollectionButton" mnemonicParsing="false" onAction="#handleAddCollectionItem" text="Add Game" />
+                                <Button fx:id="editCollectionButton" mnemonicParsing="false" onAction="#handleEditCollectionItem" text="Edit Selected" />
+                                <Button fx:id="deleteCollectionButton" mnemonicParsing="false" onAction="#handleDeleteCollectionItem" text="Delete Selected" />
+                             </children>
+                          </HBox>
+                       </children>
+                       <padding>
+                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                       </padding>
+                    </VBox>
+                  </content>
+                </Tab>
+                
+                <!-- Games Database Tab -->
+                <Tab fx:id="gamesTab" text="Games Database">
+                  <content>
+                    <VBox styleClass="tab-content-vbox" spacing="10">
+                       <children>
+                          <Label styleClass="tab-header" text="Master Game List" />
+                          <TableView fx:id="gameTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                              <TableColumn fx:id="titleColumn" prefWidth="200.0" text="Title" />
+                              <TableColumn fx:id="genreColumn" prefWidth="120.0" text="Genre" />
+                              <TableColumn fx:id="developerColumn" prefWidth="150.0" text="Developer" />
+                              <TableColumn fx:id="publisherColumn" prefWidth="150.0" text="Publisher" />
+                              <TableColumn fx:id="releaseDateColumn" prefWidth="130.0" text="Release Date" />
+                            </columns>
+                             <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                             </columnResizePolicy>
+                          </TableView>
+                          <HBox styleClass="button-bar" spacing="10">
+                             <children>
+                                <!-- TODO: Add buttons for managing master game list (Admin only?) -->
+                             </children>
+                          </HBox>
+                       </children>
+                       <padding>
+                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                       </padding>
+                    </VBox>
+                  </content>
+                </Tab>
+                
+                <!-- Platforms Database Tab -->
+                <Tab fx:id="platformsTab" text="Platforms Database">
+                  <content>
+                    <VBox styleClass="tab-content-vbox" spacing="10">
+                       <children>
+                          <Label styleClass="tab-header" text="Master Platform List" />
+                          <TableView fx:id="platformTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                              <TableColumn fx:id="platformNameColumn" prefWidth="200.0" text="Platform Name" />
+                              <TableColumn fx:id="manufacturerColumn" prefWidth="200.0" text="Manufacturer" />
+                              <TableColumn fx:id="platformReleaseYearColumn" prefWidth="150.0" text="Release Year" />
+                            </columns>
+                             <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                             </columnResizePolicy>
+                          </TableView>
+                          <HBox styleClass="button-bar" spacing="10">
+                              <!-- TODO: Add buttons for managing platforms (Admin only?) -->
+                          </HBox>
+                       </children>
+                       <padding>
+                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                       </padding>
+                    </VBox>
+                  </content>
+                </Tab>
+                
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
+
